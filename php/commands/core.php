@@ -52,7 +52,7 @@ class Core_Command extends WP_CLI_Command {
 	public function config( $args, $assoc_args ) {
 		$_POST['dbname'] = $assoc_args['dbname'];
 		$_POST['uname'] = $assoc_args['dbuser'];
-		$_POST['pwd'] = isset( $assoc_args['dbpass'] ) ? $assoc_args['dbpass'] : '';
+		$_POST['pwd'] = isset( $assoc_args['dbpass'] ) && !empty( $assoc_args['dbpass'] ) ? $assoc_args['dbpass'] : '';
 		$_POST['dbhost'] = isset( $assoc_args['dbhost'] ) ? $assoc_args['dbhost'] : 'localhost';
 		$_POST['prefix'] = isset( $assoc_args['dbprefix'] ) ? $assoc_args['dbprefix'] : 'wp_';
 
